@@ -14,22 +14,20 @@ typedef struct Stack {
 
 /**
  * @brief Create a new stack with the given initial size.
- * 
+ *
  * @param initialSize Initial size of the stack
- * @return Stack 
+ * @return Stack
  */
 Stack new_stack(int initialSize) {
-  Stack stack = {
-    .size = initialSize,
-    .buf = malloc(initialSize * sizeof(long))
-  };
+  Stack stack = {.size = initialSize,
+                 .buf = malloc(initialSize * sizeof(long))};
 
   return stack;
 }
 
 /**
  * @brief Push a value to the top of the stack.
- * 
+ *
  * @param stack stack
  * @param value value to push
  */
@@ -44,28 +42,24 @@ void stack_push(Stack *stack, float value) {
 
 /**
  * @brief Pop a value from the top of the stack.
- * 
+ *
  * @param stack stack
  * @return popped value
  */
-long stack_pop(Stack *stack) {
-  return stack->buf[--stack->top];
-}
+long stack_pop(Stack *stack) { return stack->buf[--stack->top]; }
 
 /**
  * @brief Free the stack's buffer
- * 
+ *
  * @param stack  stack
  */
-void stack_free(Stack *stack) {
-  free(stack->buf);
-}
+void stack_free(Stack *stack) { free(stack->buf); }
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
   Stack stack = new_stack(10);
 
   for (int i = 1; i < argc; i++) {
-    char* arg = argv[i];
+    char *arg = argv[i];
 
     if (!strcmp(arg, "add")) {
       float a = stack_pop(&stack);

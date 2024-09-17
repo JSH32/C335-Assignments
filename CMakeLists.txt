@@ -11,7 +11,6 @@ set(ASSIGNMENTS_DIR "${CMAKE_SOURCE_DIR}/assignments")
 # Get the list of all subdirectories in the assignments folder
 file(GLOB ASSIGNMENT_DIRS RELATIVE ${ASSIGNMENTS_DIR} ${ASSIGNMENTS_DIR}/*)
 
-
 # Iterate over each subdirectory and create a build target
 foreach(ASSIGNMENT_DIR ${ASSIGNMENT_DIRS})
     if(IS_DIRECTORY ${ASSIGNMENTS_DIR}/${ASSIGNMENT_DIR})

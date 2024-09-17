@@ -1,2 +1,4 @@
 out
 CMakePresets.json
+.cache
+build
