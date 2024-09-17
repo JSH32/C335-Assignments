@@ -1,0 +1,13 @@
+BasedOnStyle: WebKit
+Standard: Cpp11
+
+AlignConsecutiveAssignments: true
+IndentCaseLabels: true
+PointerAlignment: Left
+SortIncludes: true
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterEnum: false
+  SplitEmptyFunction: false
+AllowShortEnumsOnASingleLine: false
+IndentWidth: 2

@@ -9,7 +9,7 @@
 typedef struct Stack {
   int size;
   int top;
-  long *buf;
+  long* buf;
 } Stack;
 
 /**
@@ -19,8 +19,10 @@ typedef struct Stack {
  * @return Stack
  */
 Stack new_stack(int initialSize) {
-  Stack stack = {.size = initialSize,
-                 .buf = malloc(initialSize * sizeof(long))};
+  Stack stack = {
+    .size = initialSize,
+    .buf  = malloc(initialSize * sizeof(long))
+  };
 
   return stack;
 }
@@ -31,7 +33,7 @@ Stack new_stack(int initialSize) {
  * @param stack stack
  * @param value value to push
  */
-void stack_push(Stack *stack, float value) {
+void stack_push(Stack* stack, float value) {
   if (stack->top == stack->size) {
     stack->size *= 2;
     stack->buf = realloc(stack->buf, stack->size * sizeof(long));
@@ -46,20 +48,24 @@ void stack_push(Stack *stack, float value) {
  * @param stack stack
  * @return popped value
  */
-long stack_pop(Stack *stack) { return stack->buf[--stack->top]; }
+long stack_pop(Stack* stack) {
+  return stack->buf[--stack->top];
+}
 
 /**
  * @brief Free the stack's buffer
  *
  * @param stack  stack
  */
-void stack_free(Stack *stack) { free(stack->buf); }
+void stack_free(Stack* stack) {
+  free(stack->buf);
+}
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   Stack stack = new_stack(10);
 
   for (int i = 1; i < argc; i++) {
-    char *arg = argv[i];
+    char* arg = argv[i];
 
     if (!strcmp(arg, "add")) {
       float a = stack_pop(&stack);

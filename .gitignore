@@ -2,3 +2,4 @@ out
 CMakePresets.json
 .cache
 build
+.DS_Store
